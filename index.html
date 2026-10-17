@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Dividing Head | Firmware Installer</title>
+  <script
+    type="module"
+    src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module">
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #080b09;
+      color: #f2fff5;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      width: 100%;
+      max-width: 620px;
+      padding: 35px;
+      background: #121914;
+      border: 1px solid #294b32;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .brand {
+      color: #43e477;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 44px);
+      margin: 20px 0 10px;
+    }
+
+    h1 span { color: #43e477; }
+
+    p { color: #b8c7bc; line-height: 1.6; }
+
+    .instructions {
+      text-align: left;
+      margin: 25px 0;
+      padding: 18px;
+      border-radius: 12px;
+      background: #090e0b;
+      border: 1px solid #294b32;
+    }
+
+    .instructions strong { color: #43e477; }
+
+    li { margin: 10px 0; }
+
+    esp-web-install-button {
+      display: block;
+      margin: 28px 0 18px;
+    }
+
+    esp-web-install-button::part(button) {
+      width: 100%;
+      min-height: 58px;
+      border: 0;
+      border-radius: 10px;
+      background: #43e477;
+      color: #07110a;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #294b32;
+      color: #43e477;
+      font-size: 13px;
+    }
+
+    .small { font-size: 12px; }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="brand">DIGITAL DIVIDING HEAD</div>
+
+    <h1>Firmware <span>Installer</span></h1>
+
+    <p>
+      Install the firmware on your compatible
+      ONX3248G035 ESP32-S3 touchscreen.
+    </p>
+
+    <div class="instructions">
+      <strong>Before installation</strong>
+      <ol>
+        <li>Use a Windows computer with Chrome or Edge.</li>
+        <li>Connect the display with a USB data cable.</li>
+        <li>Keep motor power disconnected during installation.</li>
+        <li>Select the correct USB serial port when prompted.</li>
+        <li>Wait until installation is complete before unplugging.</li>
+      </ol>
+    </div>
+
+    <esp-web-install-button manifest="manifest.json">
+      <span slot="unsupported">
+        Please open this page in Chrome or Edge on a computer.
+      </span>
+    </esp-web-install-button>
+
+    <p class="small">
+      If installation fails, check the USB cable, driver and selected port.
+      Do not disconnect the display while flashing.
+    </p>
+
+    <footer>Developed by Dave</footer>
+  </main>
+</body>
+</html>
